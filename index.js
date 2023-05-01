@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-// const $ = require('cheerio');
 const { sendNotification } = require("./utils/notification");
 const cheerio = require('cheerio');
 const CronJob = require('cron').CronJob;
@@ -17,12 +16,6 @@ fs.readFile(filepath, "utf8", (err, data) => {
         return;
     }
     const { url, price } = JSON.parse(data);
-    console.log(url);    // "https://www.amazon.in/boAt-Airdopes-190-Breathing-Signature/dp/B0BBTYDK6Y?th=1"
-    //console.log(price);
-
-
-    //const url = "https://www.amazon.in/boAt-Airdopes-190-Breathing-Signature/dp/B0BBTYDK6Y?th=1";
-
     async function configureBrowser() {
 
         const browser = await puppeteer.launch()
